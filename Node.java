@@ -12,18 +12,39 @@ public class Node
 		this.rightNode = null;
 	}
 
+	public void visitPreOrder()
+	{
+		System.out.println(this.payload);
+		if(this.leftNode != null)
+		{
+			this.leftNode.visitPreOrder();
+		}
+		if(this.rightNode != null)
+		{
+			this.rightNode.visitPreOrder();
+		}
+	}
+		
+		
 	public void visitPostOrder()
 	{
-		
+		if(this.leftNode != null)
+		{
+			this.leftNode.visitPostOrder();
+		}
+		if(this.rightNode != null)
+		{
+			this.rightNode.visitPostOrder();
+		}
+		System.out.println(this.payload);
 	}
 	public void visitInOrder()
 	{
-		
 		if(this.leftNode != null)
 		{
 			this.leftNode.visitInOrder();
 		}
-		System.out.print(this.payload + " ");
+		System.out.println(this.payload);
 		if(this.rightNode != null)
 		{
 			this.rightNode.visitInOrder();
