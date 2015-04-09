@@ -1,4 +1,3 @@
-
 public class Node 
 {
 	private int payload;
@@ -12,32 +11,6 @@ public class Node
 		this.rightNode = null;
 	}
 
-	public void visitPreOrder()
-	{
-		System.out.println(this.payload);
-		if(this.leftNode != null)
-		{
-			this.leftNode.visitPreOrder();
-		}
-		if(this.rightNode != null)
-		{
-			this.rightNode.visitPreOrder();
-		}
-	}
-		
-		
-	public void visitPostOrder()
-	{
-		if(this.leftNode != null)
-		{
-			this.leftNode.visitPostOrder();
-		}
-		if(this.rightNode != null)
-		{
-			this.rightNode.visitPostOrder();
-		}
-		System.out.println(this.payload);
-	}
 	public void visitInOrder()
 	{
 		if(this.leftNode != null)
@@ -50,9 +23,35 @@ public class Node
 			this.rightNode.visitInOrder();
 		}
 	}
+	
+	public void visitPreOrder()
+	{
+		System.out.println(this.payload);
+		if(this.leftNode != null)
+		{
+			this.leftNode.visitPreOrder();
+		}
+		if(this.rightNode != null)
+		{
+			this.rightNode.visitPreOrder();
+		}
+	}
+	
+	public void visitPostOrder()
+	{
+		if(this.leftNode != null)
+		{
+			this.leftNode.visitPostOrder();
+		}
+		if(this.rightNode != null)
+		{
+			this.rightNode.visitPostOrder();
+		}
+		System.out.println(this.payload);
+		
+	}
 	public void addNode(Node n)
 	{
-		
 		if(n.getPayload() <= this.payload)
 		{
 			if(this.leftNode == null)
@@ -77,29 +76,25 @@ public class Node
 		}
 	}
 	
-	public Node getLeftNode() 
-	{
+	public Node getLeftNode() {
 		return leftNode;
 	}
 
-	public void setLeftNode(Node leftNode) 
-	{
+	public void setLeftNode(Node leftNode) {
 		this.leftNode = leftNode;
 	}
 
-	public Node getRightNode() 
-	{
+	public Node getRightNode() {
 		return rightNode;
 	}
 
-	public void setRightNode(Node rightNode) 
-	{
+	public void setRightNode(Node rightNode) {
 		this.rightNode = rightNode;
 	}
 
-	public int getPayload() 
-	{
+	public int getPayload() {
 		return payload;
 	}
+	
 	
 }

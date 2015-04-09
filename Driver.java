@@ -13,6 +13,7 @@ public class Driver
 		{
 			bt.add(r.nextInt());
 		}
+		
 		System.out.println(bt.isBalanced());
 		
 		
